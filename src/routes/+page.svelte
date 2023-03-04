@@ -1,4 +1,6 @@
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<div class="card w-96 bg-primary text-primary-content shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">Hi! Welcome to distribution scripts</h2>
+    <p>Here there are a few scripts for distributions reports</p>
+  </div>
+</div>

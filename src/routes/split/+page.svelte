@@ -71,7 +71,7 @@
           <!-- svelte-ignore a11y-label-has-associated-control -->
 
           <label class="label">
-            <span class="label-text">Encoding</span>
+            <span class="label-text">Encoding (utf-16 for Bandcamp)</span>
           </label>
           <select
             class="select select-bordered select-primary w-full max-w-xs"

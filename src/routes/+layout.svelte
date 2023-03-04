@@ -5,6 +5,7 @@
   const routes = [
     { href: "/", name: "Home", tooltip: "Home" },
     { href: "/split", name: "Split", tooltip: "Split" },
+    { href: "/sum", name: "Sum", tooltip: "Sum" },
   ];
 </script>
 
