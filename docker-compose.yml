@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  distribution-scripts-frontend:
+    build:
+      context: .
+      target: deploy-node
+    ports:
+      - 3000:3000
+    environment:
+      - BODY_SIZE_LIMIT=20971520
