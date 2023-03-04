@@ -9,6 +9,8 @@
   const file = field("file", "", [required()], { checkOnInit: true });
   const splitForm = formValidator(prefix, artistColumn, encoding, file);
 
+  let spinner = false;
+
   const download = async (
     base64Data: string,
     filename: string,
@@ -21,7 +23,21 @@
     downloadLink.click();
   };
 
-  export let form: { base64Data: string; filename: string; filetype: string };
+  const showSpinner = () => {
+    spinner = true;
+  };
+
+  const reset = () => {
+    splitForm.reset();
+    form = null;
+    spinner = false;
+  };
+
+  export let form: {
+    base64Data: string;
+    filename: string;
+    filetype: string;
+  } | null;
   onMount(async () => {
     if (form?.base64Data && form?.filename && form?.filetype) {
       download(form.base64Data, form.filename, form.filetype);
@@ -102,13 +118,13 @@
         </div>
 
         <div class="card-actions justify-end mt-4">
-          <button class="btn btn-primary" disabled={!$splitForm.valid}
+          <button class="btn btn-primary" disabled={!$splitForm.valid} on:click={showSpinner}
             >Submit</button
           >
           <button
             class="btn btn-secondary"
             formaction=""
-            on:click|preventDefault={splitForm.reset}>Reset form</button
+            on:click|preventDefault={reset}>Reset form</button
           >
         </div>
       </form>
