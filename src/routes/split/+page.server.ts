@@ -4,7 +4,7 @@ import { base64ArrayBuffer } from './base64ArrayBuffer';
 export const actions = {
   default: async ({ request }) => {
     const data = await request.formData();
-    const res = await fetch('https://api.distribution.mnb3000.ml/split', {
+    const res = await fetch('https://api.distro.myk.digital/split', {
       method: 'POST',
       body: data
     });

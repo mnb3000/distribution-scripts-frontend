@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Spinner from "$components/Spinner.svelte";
   import { onMount } from "svelte";
   import { form as formValidator, field, style } from "svelte-forms";
   import { required } from "svelte-forms/validators";
@@ -118,8 +119,14 @@
         </div>
 
         <div class="card-actions justify-end mt-4">
-          <button class="btn btn-primary" disabled={!$splitForm.valid} on:click={showSpinner}
-            >Submit</button
+          {#if !form && spinner}
+            <Spinner />
+          {/if}
+
+          <button
+            class="btn btn-primary"
+            disabled={!$splitForm.valid}
+            on:click={showSpinner}>Submit</button
           >
           <button
             class="btn btn-secondary"
