@@ -1,12 +1,11 @@
-FROM node:16.15.1-alpine AS build
+FROM node:18.16.1-alpine AS build
 
 WORKDIR /app
 COPY . .
 
-RUN yarn
-RUN yarn build
+RUN yarn && yarn build
 
-FROM node:16.15.1-alpine AS deploy-node
+FROM node:18.16.1-alpine AS deploy-node
 
 WORKDIR / app
 RUN rm -rf ./*
